@@ -37,7 +37,7 @@ interface FilterType {
 const Filter = (props: FilterType) => {
 	const { searchFilter, setSearchFilter, initialInput } = props;
 	const device = useDeviceDetect();
-	const router = useRouter();
+	const router = useRouter();                                                  // 
 	const [propertyLocation, setPropertyLocation] = useState<PropertyLocation[]>(Object.values(PropertyLocation));
 	const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
 	const [searchText, setSearchText] = useState<string>('');
@@ -48,8 +48,8 @@ const Filter = (props: FilterType) => {
 		const queryParams = JSON.stringify({
 			...searchFilter,
 			search: {
-				...searchFilter.search,
-			},
+				...searchFilter.search,  
+			},   //
 		});
 
 		if (searchFilter?.search?.locationList?.length == 0) {
@@ -79,7 +79,7 @@ const Filter = (props: FilterType) => {
 		}
 
 		if (searchFilter?.search?.locationList) setShowMore(true);
-	}, [searchFilter]);
+	}, [searchFilter]); //
 
 	/** HANDLERS **/
 	const propertyLocationSelectHandler = useCallback(

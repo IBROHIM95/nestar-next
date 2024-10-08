@@ -59,12 +59,12 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 	};
 
 	const sortingClickHandler = (e: MouseEvent<HTMLElement>) => {
-		setAnchorEl(e.currentTarget);
-		setSortingOpen(true);
+		setAnchorEl(e.currentTarget); //function qayerda ochilishni aniqlaydi
+		// setSortingOpen(true);
 	};
 
 	const sortingCloseHandler = () => {
-		setSortingOpen(false);
+		// setSortingOpen(false);
 		setAnchorEl(null);
 	};
 
