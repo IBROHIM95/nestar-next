@@ -97,13 +97,13 @@ const TopAgents = (props: TopAgentsProps) => {
 									prevEl: '.swiper-agents-prev',
 								}}
 							>
-								{topAgents.map((agent: Member) => {
-									return (
-										<SwiperSlide className={'top-agents-slide'} key={agent?._id}>
-											<TopAgentCard agent={agent} key={agent?.memberNick} />
-										</SwiperSlide>
-									);
-								})}
+							{topAgents.map((agent: Member) => {
+                                return (
+                                    <SwiperSlide className={'top-agents-slide'} key={agent?._id}>
+                                        <TopAgentCard agent={agent} key={agent?.memberNick} />
+                                    </SwiperSlide>
+                                );
+                            })}
 							</Swiper>
 						</Box>
 						<Box component={'div'} className={'switch-btn swiper-agents-next'}>
