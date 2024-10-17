@@ -94,8 +94,8 @@ const CommunityDetail: NextPage = ({ initialInput, ...props }: T) => {
 		variables: {input: searchFilter},
 		notifyOnNetworkStatusChange: true,
 		onCompleted:(data: any) =>  {
-			setBoardArticle(data?. getComments.list)
-			setMemberImage(data?. getComments?.metaCounter?.[0].total || 0)
+			setBoardArticle(data?.getComments.list)
+			setMemberImage(data?.getComments?.metaCounter?.[0].total || 0)
 		}
 	})
 

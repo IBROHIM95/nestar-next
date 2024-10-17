@@ -17,10 +17,11 @@ interface PropertyCardType {
 	likePropertyHandler?: any;
 	myFavorites?: boolean;
 	recentlyVisited?: boolean;
+	
 }
 
 const PropertyCard = (props: PropertyCardType) => {
-	const { property, likePropertyHandler, myFavorites, recentlyVisited } = props;
+	const { property,  likePropertyHandler, myFavorites, recentlyVisited } = props;
 	const device = useDeviceDetect();
 	const user = useReactiveVar(userVar);
 	const imagePath: string = property?.propertyImages[0]
