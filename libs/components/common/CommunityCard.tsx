@@ -58,7 +58,7 @@ const CommunityCard = (props: CommunityCardProps) => {
 					<img src={imagePath} alt="" className="card-img" />
 				</Stack>
 				<Stack className="desc-box" sx={{ marginTop: '-20px' }}>
-					<Stack>
+					<Stack>dfsdds
 						<Typography
 							className="desc"
 							onClick={(e:any) => {

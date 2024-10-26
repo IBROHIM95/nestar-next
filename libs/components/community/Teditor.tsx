@@ -91,7 +91,13 @@ const TuiEditor = () => {
 
 			if (memoizedValues.articleContent === '' && memoizedValues.articleTitle === '') {
 				throw new Error(Message.INSERT_ALL_INPUTS)
+				
 			}
+			await createBoardArticle({
+                variables: {
+                    input: {...memoizedValues, articleCategory}
+                },
+            });
 
 			await sweetTopSuccessAlert('Article is created successfully', 700)
 			await router.push({

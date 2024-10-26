@@ -231,6 +231,7 @@ PropertyList.defaultProps = {
 				start: 0,
 				end: 2000000,
 			},
+			
 		},
 	},
 };

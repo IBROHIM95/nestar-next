@@ -85,19 +85,22 @@ const CommunityDetail: NextPage = ({ initialInput, ...props }: T) => {
 
 	
 	const {
-		loading:  getCommentsLoading,
-		data:  getCommentsData,
-		error:  getCommentsError,
-		refetch:  getCommentsRefetch,  
-	} = useQuery(GET_COMMENTS, {
-		fetchPolicy: 'cache-and-network',
-		variables: {input: searchFilter},
-		notifyOnNetworkStatusChange: true,
-		onCompleted:(data: any) =>  {
-			setBoardArticle(data?.getComments.list)
-			setMemberImage(data?.getComments?.metaCounter?.[0].total || 0)
-		}
-	})
+        loading: getCommentsLoading,
+        data: getCommentsData,
+        error: getCommentsError,
+        refetch: getCommentsRefetch,
+    } = useQuery
+            (GET_COMMENTS, {
+                fetchPolicy: 'cache-and-network',
+                variables: {
+                    input: searchFilter,
+                },
+                notifyOnNetworkStatusChange: true,
+                onCompleted: (data: any) => {
+                    setComments(data.getComments.list);
+                    setTotal(data.getComments?.metaCounter?.[0]?.total || 0);
+                },
+            });
 
 
 
@@ -328,11 +331,11 @@ const CommunityDetail: NextPage = ({ initialInput, ...props }: T) => {
 										</Stack>
 										<Stack className="info">
 											<Stack className="icon-info">
-												{boardArticle?.meLiked && boardArticle?.meLiked[0]?.myFavorite ? (
-													<ThumbUpAltIcon onClick={() => likeArticleHandler(user, boardArticle?._id)} />
-												): (
-                                                     <ThumbUpOffAltIcon onClick={() => likeArticleHandler(user, boardArticle?._id)} />
-												)}
+											{boardArticle?.meLiked && boardArticle?.meLiked[0]?.myFavorite ? (
+                                                    <ThumbUpAltIcon onClick={() => likeArticleHandler(user, boardArticle?._id)} />
+                                                ) : (
+                                                    <ThumbUpOffAltIcon onClick={() => likeArticleHandler(user, boardArticle?._id)} />
+                                                )}
 												 
 
 												<Typography className="text">{boardArticle?.articleLikes}</Typography>
